@@ -1,0 +1,52 @@
+name: Deploy Canna Cartel to staging
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Type DEPLOY_STAGING to upload theme and bridge plugin to staging'
+        required: true
+        type: string
+jobs:
+  stage:
+    if: github.ref == 'refs/heads/main' && inputs.confirmation == 'DEPLOY_STAGING'
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and structure checks
+        run: |
+          sudo apt-get update && sudo apt-get install -y php-cli rsync
+          npm run verify
+      - name: Configure trusted SSH access
+        env:
+          DEPLOY_KEY: ${{ secrets.WP_STAGING_SSH_PRIVATE_KEY }}
+          KNOWN_HOSTS: ${{ secrets.WP_STAGING_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_KEY" && test -n "$KNOWN_HOSTS"
+          mkdir -p "$HOME/.ssh"
+          printf '%s\n' "$DEPLOY_KEY" > "$HOME/.ssh/id_ed25519"
+          printf '%s\n' "$KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 700 "$HOME/.ssh"
+          chmod 600 "$HOME/.ssh/id_ed25519" "$HOME/.ssh/known_hosts"
+      - name: Upload theme and plugin to WordPress staging (no activation)
+        env:
+          HOST: ${{ secrets.WP_STAGING_SSH_HOST }}
+          USER: ${{ secrets.WP_STAGING_SSH_USER }}
+          PORT: ${{ secrets.WP_STAGING_SSH_PORT }}
+          WP_CONTENT: ${{ secrets.WP_STAGING_WP_CONTENT_PATH }}
+        run: |
+          set -euo pipefail
+          test -n "$HOST" && test -n "$USER" && test -n "$WP_CONTENT"
+          [[ "$WP_CONTENT" == /*/wp-content ]] || { echo 'Path must end in /wp-content'; exit 1; }
+          PORT="${PORT:-22}"
+          [[ "$PORT" =~ ^[0-9]+$ ]] || exit 1
+          ssh -i "$HOME/.ssh/id_ed25519" -o StrictHostKeyChecking=yes -p "$PORT" "$USER@$HOST" "test -d '$WP_CONTENT/themes' && test -d '$WP_CONTENT/plugins'"
+          rsync -az --no-perms --no-owner --no-group -e "ssh -i $HOME/.ssh/id_ed25519 -o StrictHostKeyChecking=yes -p $PORT" \
+            wordpress/themes/canna-cartel-unified/ "$USER@$HOST:$WP_CONTENT/themes/canna-cartel-unified/"
+          rsync -az --no-perms --no-owner --no-group -e "ssh -i $HOME/.ssh/id_ed25519 -o StrictHostKeyChecking=yes -p $PORT" \
+            wordpress/plugins/canna-cartel-bridge/ "$USER@$HOST:$WP_CONTENT/plugins/canna-cartel-bridge/"
+          echo 'Staging files uploaded. Review and activate inside staging WordPress admin.'

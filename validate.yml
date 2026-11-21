@@ -1,0 +1,16 @@
+name: Validate Canna Cartel kit
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PHP CLI
+        run: sudo apt-get update && sudo apt-get install -y php-cli
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check files, JSON, assets and PHP syntax
+        run: npm run verify

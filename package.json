@@ -1,0 +1,8 @@
+{
+  "name": "canna-cartel-github-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WordPress theme and read-only Base44 sync bridge for Canna Cartel 420",
+  "scripts": {"verify": "node scripts/verify.mjs"},
+  "engines": {"node": ">=18"}
+}
