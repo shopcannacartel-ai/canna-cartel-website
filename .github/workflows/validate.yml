@@ -1,0 +1,52 @@
+name: Canna Cartel Code Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate PHP and JSON
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: none
+      - name: Check PHP syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' files < <(find . -type f -name '*.php' -not -path './vendor/*' -print0)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No PHP files found"
+          else
+            for file in "${files[@]}"; do php -l "$file"; done
+          fi
+      - name: Check JSON syntax
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          files = [p for p in pathlib.Path('.').rglob('*.json') if not any(x in ('node_modules','vendor','.git') for x in p.parts)]
+          failed = False
+          for path in files:
+              try:
+                  json.loads(path.read_text(encoding='utf-8'))
+                  print(f'OK: {path}')
+              except Exception as exc:
+                  print(f'INVALID: {path}: {exc}')
+                  failed = True
+          if failed:
+              sys.exit(1)
+          print(f'Validated {len(files)} JSON files')
+          PY
