@@ -1,61 +1,71 @@
 <?php get_header(); ?>
-<main id="main-content">
-  <section class="ccu-hero" aria-labelledby="ccu-hero-title">
-    <div class="ccu-wrap ccu-hero-grid">
-      <div class="ccu-hero-copy">
-        <p class="ccu-eyebrow">Canna Cartel 420 · Cape Town</p>
-        <div class="ccu-hero-brand"><?php ccu_logo('hero'); ?></div>
-        <h1 id="ccu-hero-title">Welcome to <em>the club.</em></h1>
-        <p class="ccu-lead">A community-first membership experience. Stay connected with club news, discover approved activities and manage your membership simply.</p>
-        <div class="ccu-actions">
+<main id="main-content" class="ccu-home">
+  <section class="ccu-home-hero" aria-labelledby="ccu-home-title">
+    <div class="ccu-wrap ccu-home-hero-grid">
+      <div class="ccu-home-copy">
+        <p class="ccu-eyebrow">Cape Town · South Africa</p>
+        <?php ccu_logo('hero'); ?>
+        <p class="ccu-home-kicker">COMMUNITY STARTS HERE</p>
+        <h1 id="ccu-home-title">Your people.<br><em>Your community.</em></h1>
+        <p class="ccu-home-lead">A simpler way to stay connected with Canna Cartel 420. Explore membership information, keep up with approved community activities and access your member account.</p>
+        <div class="ccu-home-actions">
           <a class="ccu-btn" href="<?php echo esc_url(ccu_url('/membership/')); ?>">Explore membership <span aria-hidden="true">↗</span></a>
-          <a class="ccu-btn ccu-btn--outline" href="<?php echo esc_url(ccu_url('/member-sign-in/')); ?>">Member sign in</a>
+          <a class="ccu-btn ccu-btn--outline" href="<?php echo esc_url(ccu_url('/member-sign-in/')); ?>">I’m already a member</a>
         </div>
-        <div class="ccu-notice" role="note"><span class="ccu-notice-dot" aria-hidden="true"></span> Registration will open after final terms, privacy and security checks.</div>
+        <p class="ccu-home-status"><span aria-hidden="true"></span> Membership registration is currently closed while final checks are completed.</p>
       </div>
-      <div class="ccu-hero-photo">
+      <div class="ccu-home-visual">
         <picture>
           <source media="(max-width: 720px)" srcset="<?php echo esc_url(ccu_asset('cape_town_community_mobile.webp')); ?>" type="image/webp">
-          <img src="<?php echo esc_url(ccu_asset('cape_town_community_desktop.webp')); ?>" alt="Cape Town city streets and mountain backdrop" width="1260" height="920" loading="eager" decoding="async" fetchpriority="high">
+          <img src="<?php echo esc_url(ccu_asset('cape_town_community_desktop.webp')); ?>" alt="Cape Town city and mountain scenery" width="1260" height="920" loading="eager" decoding="async" fetchpriority="high">
         </picture>
-        <div class="ccu-photo-tag">Rooted in Cape Town. Built for community.</div>
+        <div class="ccu-home-image-caption"><span>01</span><span>Rooted in Cape Town. Connected by community.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="ccu-section ccu-section--light" aria-labelledby="ccu-experience-title">
-    <div class="ccu-wrap">
-      <p class="ccu-eyebrow ccu-eyebrow--green">The Canna Cartel experience</p>
-      <h2 id="ccu-experience-title">Your community. <em>One place.</em></h2>
-      <p class="ccu-intro">A straightforward membership platform first — not a complicated online store.</p>
-      <div class="ccu-cards">
-        <article class="ccu-card"><span class="ccu-card-number">01 / Membership</span><h3>Join the club</h3><p>Explore membership, account information and simple steps for joining when registration opens.</p><a href="<?php echo esc_url(ccu_url('/membership/')); ?>">Explore membership <span aria-hidden="true">↗</span></a></article>
-        <article class="ccu-card"><span class="ccu-card-number">02 / Community</span><h3>Events & activities</h3><p>Follow announcements about approved club activities as dates and participation details are confirmed.</p><a href="<?php echo esc_url(ccu_url('/member-updates-and-competitions/')); ?>">See updates <span aria-hidden="true">↗</span></a></article>
-        <article class="ccu-card"><span class="ccu-card-number">03 / Education</span><h3>Know more</h3><p>Find balanced, easy-to-follow information about cannabis terminology, responsible choices and club FAQs.</p><a href="<?php echo esc_url(ccu_url('/frequently-asked-questions/')); ?>">Explore FAQs <span aria-hidden="true">↗</span></a></article>
+  <section class="ccu-home-intro ccu-section--light" aria-labelledby="ccu-intro-title">
+    <div class="ccu-wrap ccu-home-intro-inner">
+      <div><p class="ccu-eyebrow ccu-eyebrow--green">A club built around people</p><h2 id="ccu-intro-title">Membership made <em>straightforward.</em></h2></div>
+      <p>We’re creating one welcoming place for membership information, club news and community updates. No complicated online shop or checkout. Just the essentials, clearly explained.</p>
+    </div>
+  </section>
+
+  <section class="ccu-home-benefits" aria-label="Membership features">
+    <div class="ccu-wrap ccu-home-benefit-grid">
+      <article class="ccu-home-benefit"><span class="ccu-home-icon" aria-hidden="true">01</span><h3>Your member space</h3><p>Access your account and view the membership information recorded for you.</p><a href="<?php echo esc_url(ccu_url('/member-sign-in/')); ?>">Go to sign in <span aria-hidden="true">↗</span></a></article>
+      <article class="ccu-home-benefit"><span class="ccu-home-icon" aria-hidden="true">02</span><h3>Club updates</h3><p>Keep up with announcements, approved activities and community news.</p><a href="<?php echo esc_url(ccu_url('/member-updates-and-competitions/')); ?>">View updates <span aria-hidden="true">↗</span></a></article>
+      <article class="ccu-home-benefit"><span class="ccu-home-icon" aria-hidden="true">03</span><h3>Clear information</h3><p>Find helpful answers about membership, privacy and how the club works.</p><a href="<?php echo esc_url(ccu_url('/frequently-asked-questions/')); ?>">Read the FAQs <span aria-hidden="true">↗</span></a></article>
+    </div>
+  </section>
+
+  <section class="ccu-home-journey" aria-labelledby="ccu-journey-title">
+    <div class="ccu-wrap ccu-journey-grid">
+      <div class="ccu-journey-heading"><p class="ccu-eyebrow">Your membership journey</p><h2 id="ccu-journey-title">Three simple <em>steps.</em></h2><p>When registration opens, the process will be clear from the start.</p><a class="ccu-btn ccu-btn--light" href="<?php echo esc_url(ccu_url('/membership/')); ?>">Membership information <span aria-hidden="true">↗</span></a></div>
+      <div class="ccu-journey-steps">
+        <article><span>01</span><div><h3>Explore</h3><p>Read the membership details, terms and privacy information before deciding.</p></div></article>
+        <article><span>02</span><div><h3>Register and arrange payment</h3><p>When registration is available, follow the instructions. Payments are handled and verified separately by staff.</p></div></article>
+        <article><span>03</span><div><h3>Access your account</h3><p>Once your membership is confirmed, use the member sign-in page to access your account.</p></div></article>
       </div>
     </div>
   </section>
 
-  <section class="ccu-section ccu-section--story" aria-labelledby="ccu-story-title">
-    <div class="ccu-wrap ccu-story-grid">
+  <section class="ccu-home-community" aria-labelledby="ccu-community-title">
+    <div class="ccu-wrap ccu-community-grid">
       <picture>
         <source media="(max-width: 720px)" srcset="<?php echo esc_url(ccu_asset('cartel_community_walk_mobile.webp')); ?>" type="image/webp">
-        <img src="<?php echo esc_url(ccu_asset('cartel_community_walk_desktop.webp')); ?>" alt="Friends walking together through a neighbourhood" width="1260" height="920" loading="lazy" decoding="async">
+        <img src="<?php echo esc_url(ccu_asset('cartel_community_walk_desktop.webp')); ?>" alt="A group of friends walking together outdoors" width="1260" height="920" loading="lazy" decoding="async">
       </picture>
-      <div><p class="ccu-eyebrow">People first</p><h2 id="ccu-story-title">More than a <em>membership card.</em></h2><p>A comfortable place to keep track of your community, your club updates and your membership information — with clear choices about optional messages.</p><a class="ccu-btn ccu-btn--light" href="<?php echo esc_url(ccu_url('/about/')); ?>">Our story <span aria-hidden="true">↗</span></a></div>
+      <div><p class="ccu-eyebrow ccu-eyebrow--green">Stay in the loop</p><h2 id="ccu-community-title">Good people. <em>Good energy.</em></h2><p>From club announcements to approved meet-ups, this is where members can stay informed and connected.</p><a class="ccu-text-link" href="<?php echo esc_url(ccu_url('/about/')); ?>">Get to know the club <span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
 
-  <section class="ccu-section ccu-section--light" aria-labelledby="ccu-how-title">
-    <div class="ccu-wrap">
-      <p class="ccu-eyebrow ccu-eyebrow--green">Simple steps</p><h2 id="ccu-how-title">How membership works.</h2>
-      <div class="ccu-steps">
-        <div><span>01</span><h3>Discover</h3><p>Review the membership terms and pricing when registration opens.</p></div>
-        <div><span>02</span><h3>Pay separately</h3><p>Staff independently confirm manual payments. There is no website checkout.</p></div>
-        <div><span>03</span><h3>Stay connected</h3><p>Sign in to view recorded membership information and approved updates.</p></div>
-      </div>
-      <div class="ccu-callout"><div><p class="ccu-eyebrow ccu-eyebrow--green">Coming later</p><h3>Still in Harvest.</h3><p>Our online shop is being prepared. Online orders, payment and checkout are not active.</p></div><a class="ccu-btn" href="<?php echo esc_url(ccu_url('/shop/')); ?>">Shop update <span aria-hidden="true">↗</span></a></div>
+  <section class="ccu-home-final" aria-labelledby="ccu-final-title">
+    <div class="ccu-wrap ccu-final-panel">
+      <div><p class="ccu-eyebrow">Your next step</p><h2 id="ccu-final-title">Want to know more?</h2><p>Explore the membership information or head straight to your member account.</p></div>
+      <div class="ccu-final-actions"><a class="ccu-btn" href="<?php echo esc_url(ccu_url('/membership/')); ?>">Explore membership <span aria-hidden="true">↗</span></a><a class="ccu-btn ccu-btn--outline" href="<?php echo esc_url(ccu_url('/member-sign-in/')); ?>">Member sign in</a></div>
     </div>
+    <p class="ccu-home-disclaimer">Membership information only. Registration is currently closed. Payments are not processed on this website and no online checkout is available.</p>
   </section>
 </main>
 <?php get_footer(); ?>
