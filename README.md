@@ -51,3 +51,12 @@ No API tokens, passwords or production credentials are checked in. The plugin us
 ### Existing WordPress pages preserved
 
 The theme links to observed routes such as `/membership/`, `/member-sign-in/`, `/frequently-asked-questions/` and `/member-updates-and-competitions/`. The account/login behavior is owned by the **existing** WordPress plugins/pages, not replaced by this kit.
+
+
+## Vercel landing-page mirror
+
+The `vercel/` directory contains a standalone, responsive static landing page that follows the same forest-green, leaf-green, gold and ivory visual system as the WordPress homepage. The root `vercel.json` serves that directory as the Vercel output; no PHP or WordPress runtime is required for this mirror.
+
+The Vercel page is a visual/public-information front end only. Membership information, member sign-in, account records and manual payment verification remain on the WordPress site at https://www.shopcannacartel.co.za/. It does not create a second member database or process payments.
+
+For automatic updates, connect this GitHub repository's `main` branch to the existing Vercel project. A push to `main` will then trigger a deployment if Git integration is enabled. The GitHub commit alone does not confirm that a Vercel deployment has completed.
