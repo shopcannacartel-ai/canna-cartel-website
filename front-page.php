@@ -14,11 +14,9 @@
         </div>
         <p class="ccu-home-status"><span aria-hidden="true"></span> Membership registration is currently closed while final checks are completed.</p>
       </div>
-      <div class="ccu-home-visual">
-        <picture>
-          <source media="(max-width: 720px)" srcset="<?php echo esc_url(ccu_asset('cape_town_community_mobile.webp')); ?>" type="image/webp">
-          <img src="<?php echo esc_url(ccu_asset('cape_town_community_desktop.webp')); ?>" alt="Cape Town city and mountain scenery" width="1260" height="920" loading="eager" decoding="async" fetchpriority="high">
-        </picture>
+      <div class="ccu-home-visual" role="img" aria-label="Abstract forest-green and gold Canna Cartel community artwork">
+        <div class="ccu-visual-orbit ccu-visual-orbit--one"></div><div class="ccu-visual-orbit ccu-visual-orbit--two"></div>
+        <div class="ccu-visual-mark">CC<span>420</span></div>
         <div class="ccu-home-image-caption"><span>01</span><span>Rooted in Cape Town. Connected by community.</span></div>
       </div>
     </div>
@@ -52,10 +50,7 @@
 
   <section class="ccu-home-community" aria-labelledby="ccu-community-title">
     <div class="ccu-wrap ccu-community-grid">
-      <picture>
-        <source media="(max-width: 720px)" srcset="<?php echo esc_url(ccu_asset('cartel_community_walk_mobile.webp')); ?>" type="image/webp">
-        <img src="<?php echo esc_url(ccu_asset('cartel_community_walk_desktop.webp')); ?>" alt="A group of friends walking together outdoors" width="1260" height="920" loading="lazy" decoding="async">
-      </picture>
+      <div class="ccu-community-art" role="img" aria-label="Decorative Canna Cartel community artwork"><span>COMMUNITY</span><strong>Better<br>together.</strong><i>CANNA CARTEL 420 · CAPE TOWN</i></div>
       <div><p class="ccu-eyebrow ccu-eyebrow--green">Stay in the loop</p><h2 id="ccu-community-title">Good people. <em>Good energy.</em></h2><p>From club announcements to approved meet-ups, this is where members can stay informed and connected.</p><a class="ccu-text-link" href="<?php echo esc_url(ccu_url('/about/')); ?>">Get to know the club <span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
