@@ -4,3 +4,43 @@
 @media(max-width:900px){.ccu-header-inner{min-height:78px}.ccu-menu-toggle{display:inline-flex;align-items:center;gap:9px;margin-left:auto;border:1px solid rgba(255,255,255,.45);background:transparent;color:#fff;border-radius:12px;padding:10px 14px;font-size:15px;cursor:pointer}.ccu-nav{display:none;position:absolute;top:100%;right:0;left:0;padding:18px 20px 28px;background:#073e24;box-shadow:0 20px 30px rgba(0,0,0,.17);flex-direction:column;align-items:stretch;margin:0}.ccu-nav.is-open{display:flex}.ccu-menu{display:flex;flex-direction:column;align-items:stretch;gap:0}.ccu-menu a{display:block;font-size:16px;padding:11px 0}.ccu-hero-grid{grid-template-columns:1fr}.ccu-hero-photo img{height:360px}.ccu-story-grid{grid-template-columns:1fr}.ccu-story-grid img{max-height:420px}.ccu-footer-grid{grid-template-columns:1.3fr 1fr 1fr;gap:20px}}
 @media(max-width:680px){.ccu-wrap{width:min(calc(100% - 30px),var(--ccu-wrap))}.ccu-topbar{font-size:10px}.ccu-topbar .ccu-wrap{min-height:34px}.ccu-hero{padding:48px 0 65px}.ccu-hero h1{font-size:clamp(2.85rem,12vw,4rem)}.ccu-hero-photo img{height:300px}.ccu-hero-logo img{max-width:275px;max-height:155px}.ccu-section{padding:65px 0}.ccu-cards,.ccu-steps,.ccu-footer-grid{grid-template-columns:1fr}.ccu-card{min-height:0}.ccu-steps{gap:12px}.ccu-callout{flex-direction:column;align-items:flex-start;padding:24px}.ccu-footer-grid{gap:22px}.ccu-footer-bottom{margin-top:30px}.ccu-btn{width:100%}.ccu-actions .ccu-btn{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ccu-btn{transition:none}.ccu-btn:hover{transform:none}}
+
+/* Homepage membership landing layout */
+.ccu-home-hero{background:radial-gradient(ellipse at 78% 20%,rgba(48,130,78,.32),transparent 42%),#062f1c;color:#fff;padding:clamp(48px,7vw,88px) 0 76px;overflow:hidden}
+.ccu-home-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,72px);align-items:center}
+.ccu-home-copy{min-width:0}.ccu-home-copy>.ccu-hero-logo{margin:0 0 24px}.ccu-home-copy .ccu-hero-logo img{width:min(100%,270px);max-height:135px;object-position:left center}
+.ccu-home-kicker{font-size:10px;font-weight:850;letter-spacing:.22em;color:#d8b75f;margin:0 0 13px}
+.ccu-home-hero h1{font-size:clamp(3.2rem,6vw,5.7rem);line-height:.99;letter-spacing:-.065em;margin:0 0 23px;max-width:11ch}
+.ccu-home-hero h1 em{color:#d6b35e}.ccu-home-lead{max-width:520px;color:#e0eae2;font-size:clamp(1rem,1.35vw,1.15rem);line-height:1.8;margin-bottom:28px}
+.ccu-home-actions{display:flex;flex-wrap:wrap;gap:12px}.ccu-home-actions .ccu-btn{min-width:190px}
+.ccu-home-status{display:flex;align-items:flex-start;gap:10px;color:#d6e3d8;font-size:12px;line-height:1.55;margin:23px 0 0;max-width:440px}
+.ccu-home-status span{width:8px;height:8px;flex:none;border-radius:50%;background:#d7b45e;margin-top:5px}
+.ccu-home-visual{position:relative;min-width:0}.ccu-home-visual picture,.ccu-home-visual img{display:block;width:100%}.ccu-home-visual img{height:clamp(360px,43vw,570px);object-fit:cover;border-radius:26px;border:1px solid rgba(255,255,255,.2);box-shadow:0 24px 65px rgba(0,0,0,.25)}
+.ccu-home-image-caption{position:absolute;left:18px;right:18px;bottom:18px;display:flex;align-items:center;gap:13px;background:rgba(4,35,23,.88);color:#fff;padding:14px 17px;border-radius:14px;font-size:12px;font-weight:650;backdrop-filter:blur(8px)}
+.ccu-home-image-caption span:first-child{color:#e2bf6c;font-weight:900}
+.ccu-home-intro{padding:76px 0 54px}.ccu-home-intro-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:end}
+.ccu-home-intro h2{font-size:clamp(2.2rem,4.5vw,3.8rem);max-width:12ch;margin:0}.ccu-home-intro h2 em{color:#2a8e58}
+.ccu-home-intro-inner>p{font-size:17px;line-height:1.8;color:#586459;max-width:510px;margin:0 0 5px}
+.ccu-home-benefits{background:#f5f3eb;padding:25px 0 95px}.ccu-home-benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.ccu-home-benefit{background:#fff;border:1px solid #e0e5dc;border-radius:20px;padding:30px;min-height:265px;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(12,40,20,.045)}
+.ccu-home-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#eaf1e9;color:#17613c;font-size:12px;font-weight:900;margin-bottom:26px}
+.ccu-home-benefit h3{font-size:1.35rem;margin:0 0 12px}.ccu-home-benefit p{color:#5c685e;font-size:14px;line-height:1.75;margin-bottom:20px}
+.ccu-home-benefit a,.ccu-text-link{color:#14613d;font-size:14px;font-weight:850;text-decoration:none;margin-top:auto}
+.ccu-journey-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(35px,7vw,95px);align-items:center}
+.ccu-home-journey{background:#073e24;color:#fff;padding:88px 0}
+.ccu-journey-heading h2{font-size:clamp(2.5rem,4.5vw,4rem);max-width:9ch;margin:0 0 18px}.ccu-journey-heading h2 em{color:#d6b35e}
+.ccu-journey-heading>p:not(.ccu-eyebrow){color:#dce9df;max-width:330px;line-height:1.8;margin-bottom:25px}
+.ccu-journey-steps article{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.ccu-journey-steps article:first-child{border-top:1px solid rgba(255,255,255,.18)}
+.ccu-journey-steps article>span{font-size:22px;font-weight:900;color:#d6b35e}
+.ccu-journey-steps h3{font-size:1.2rem;margin:0 0 8px}.ccu-journey-steps p{color:#d5e2d8;font-size:14px;line-height:1.7;margin:0;max-width:510px}
+.ccu-home-community{background:#f5f3eb;padding:90px 0}.ccu-community-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,6vw,85px);align-items:center}
+.ccu-community-grid picture,.ccu-community-grid img{display:block;width:100%}.ccu-community-grid img{height:clamp(300px,36vw,450px);object-fit:cover;border-radius:22px}
+.ccu-community-grid h2{font-size:clamp(2.4rem,4.5vw,3.8rem);max-width:10ch;margin:0 0 20px}.ccu-community-grid h2 em{color:#2a8e58}
+.ccu-community-grid>div>p:not(.ccu-eyebrow){color:#5b685d;font-size:17px;line-height:1.8;max-width:480px;margin-bottom:25px}
+.ccu-home-final{background:#f5f3eb;padding:0 0 35px}.ccu-final-panel{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:42px;background:#e9eee5;border:1px solid #d7e0d3;border-radius:22px}
+.ccu-final-panel h2{font-size:clamp(2rem,3.5vw,3rem);margin:0 0 12px}.ccu-final-panel>div>p:not(.ccu-eyebrow){color:#59665b;margin:0}
+.ccu-final-actions{display:flex;flex-direction:column;gap:10px;min-width:220px}.ccu-final-actions .ccu-btn--outline{background:transparent;color:#073e24;border-color:#8aa18d}
+.ccu-home-disclaimer{text-align:center;color:#68746a;font-size:11px;padding:22px 20px 0;margin:0}
+@media(max-width:900px){.ccu-home-hero-grid,.ccu-home-intro-inner,.ccu-journey-grid,.ccu-community-grid{grid-template-columns:1fr}.ccu-home-copy{max-width:680px}.ccu-home-visual img{height:390px}.ccu-home-intro-inner{gap:22px}.ccu-journey-heading h2{max-width:14ch}.ccu-final-panel{align-items:flex-start;flex-direction:column}}
+@media(max-width:680px){.ccu-home-hero{padding:44px 0 58px}.ccu-home-hero h1{font-size:clamp(3rem,13vw,4.1rem)}.ccu-home-copy .ccu-hero-logo img{max-width:225px}.ccu-home-visual img{height:290px;border-radius:18px}.ccu-home-intro{padding:58px 0 35px}.ccu-home-benefits{padding:15px 0 65px}.ccu-home-benefit-grid{grid-template-columns:1fr}.ccu-home-benefit{min-height:0;padding:25px}.ccu-home-journey,.ccu-home-community{padding:65px 0}.ccu-community-grid img{height:290px}.ccu-final-panel{padding:27px 22px}.ccu-final-actions{width:100%;min-width:0}.ccu-home-actions .ccu-btn{width:100%}}
