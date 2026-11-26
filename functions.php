@@ -15,8 +15,8 @@ add_action('after_setup_theme', 'ccu_theme_setup');
 
 function ccu_enqueue_assets() {
     $version = wp_get_theme()->get('Version');
-    wp_enqueue_style('ccu-main', get_template_directory_uri() . '/assets/css/main.css', array(), $version);
-    wp_enqueue_script('ccu-menu', get_template_directory_uri() . '/assets/js/main.js', array(), $version, true);
+    wp_enqueue_style('ccu-main', get_theme_file_uri('main.css'), array(), $version);
+    wp_enqueue_script('ccu-menu', get_theme_file_uri('main.js'), array(), $version, true);
 }
 add_action('wp_enqueue_scripts', 'ccu_enqueue_assets');
 
