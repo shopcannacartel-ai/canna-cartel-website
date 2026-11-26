@@ -44,3 +44,17 @@
 .ccu-home-disclaimer{text-align:center;color:#68746a;font-size:11px;padding:22px 20px 0;margin:0}
 @media(max-width:900px){.ccu-home-hero-grid,.ccu-home-intro-inner,.ccu-journey-grid,.ccu-community-grid{grid-template-columns:1fr}.ccu-home-copy{max-width:680px}.ccu-home-visual img{height:390px}.ccu-home-intro-inner{gap:22px}.ccu-journey-heading h2{max-width:14ch}.ccu-final-panel{align-items:flex-start;flex-direction:column}}
 @media(max-width:680px){.ccu-home-hero{padding:44px 0 58px}.ccu-home-hero h1{font-size:clamp(3rem,13vw,4.1rem)}.ccu-home-copy .ccu-hero-logo img{max-width:225px}.ccu-home-visual img{height:290px;border-radius:18px}.ccu-home-intro{padding:58px 0 35px}.ccu-home-benefits{padding:15px 0 65px}.ccu-home-benefit-grid{grid-template-columns:1fr}.ccu-home-benefit{min-height:0;padding:25px}.ccu-home-journey,.ccu-home-community{padding:65px 0}.ccu-community-grid img{height:290px}.ccu-final-panel{padding:27px 22px}.ccu-final-actions{width:100%;min-width:0}.ccu-home-actions .ccu-btn{width:100%}}
+
+/* Image-free brand artwork keeps the landing page self-contained until approved photography is uploaded. */
+.ccu-home-visual{min-height:clamp(360px,43vw,570px);border-radius:26px;overflow:hidden;background:radial-gradient(circle at 50% 48%,rgba(45,142,88,.72),transparent 36%),linear-gradient(145deg,#0b5632,#031e13 75%);border:1px solid rgba(255,255,255,.2);box-shadow:0 24px 65px rgba(0,0,0,.25);display:grid;place-items:center}
+.ccu-visual-orbit{position:absolute;width:78%;aspect-ratio:1;border:1px solid rgba(226,190,103,.34);border-radius:50%;transform:rotate(-24deg)}
+.ccu-visual-orbit--two{width:58%;transform:rotate(38deg);border-color:rgba(255,255,255,.2)}
+.ccu-visual-mark{position:relative;z-index:1;width:190px;height:190px;border:1px solid rgba(225,190,104,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;gap:7px;color:#fff;font-size:54px;font-weight:950;letter-spacing:-.09em;text-shadow:0 8px 35px rgba(0,0,0,.3)}
+.ccu-visual-mark span{font-size:17px;letter-spacing:.08em;color:#e0bf70;align-self:center}
+.ccu-home-visual .ccu-home-image-caption{z-index:2}
+.ccu-community-art{min-height:clamp(300px,36vw,450px);border-radius:22px;background:radial-gradient(circle at 75% 25%,rgba(201,163,74,.26),transparent 30%),linear-gradient(145deg,#0b5632,#062b1a);color:#fff;padding:clamp(28px,5vw,58px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.ccu-community-art:after{content:"";position:absolute;width:65%;aspect-ratio:1;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-15%;bottom:-35%}
+.ccu-community-art span{font-size:10px;letter-spacing:.25em;font-weight:850;color:#e0bf70}
+.ccu-community-art strong{font-family:Georgia,serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:400;line-height:.95;letter-spacing:-.05em;position:relative;z-index:1}
+.ccu-community-art i{font-size:10px;letter-spacing:.16em;font-style:normal;color:#d9e7dc;position:relative;z-index:1}
+@media(max-width:680px){.ccu-home-visual{min-height:290px;border-radius:18px}.ccu-visual-mark{width:145px;height:145px;font-size:42px}.ccu-community-art{min-height:290px}}
